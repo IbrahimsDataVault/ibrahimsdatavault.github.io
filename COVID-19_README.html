@@ -1,0 +1,129 @@
+<h1 id="covid-19-project-showcase">COVID-19 Project Showcase</h1>
+<h2 id="summary">Summary:</h2>
+<h3 id="this-covid-19-project-demonstrates-my-data-analytical-skills-by-utilizing-sql-and-tableau-i-used-sql-to-clean-and-query-the-data-to-create-4-tables-and-then-visualized-the-results-on-a-tableau-dashboard-the-key-findings-from-the-dashboard-as-of-january-2023-show-that-around-1-of-the-worlds-population-who-have-been-infected-with-covid-19-have-died-additionally-europe-has-the-highest-infection-death-count-and-infection-rate-in-the-world-the-project-highlights-my-ability-to-effectively-use-sql-and-tableau-to-analyze-and-present-data-as-well-as-my-ability-to-extract-valuable-insights-from-the-data">This COVID-19 project demonstrates my data analytical skills by utilizing SQL and Tableau. I used SQL to clean and query the data to create 4 tables, and then visualized the results on a Tableau dashboard. The key findings from the dashboard as of January 2023, show that around 1% of the world's population who have been infected with COVID-19 have died. Additionally, Europe has the highest infection death count and infection rate in the world. The project highlights my ability to effectively use SQL and Tableau to analyze and present data, as well as my ability to extract valuable insights from the data.</h3>
+<h2 id="author">Author</h2>
+<ul>
+<li><a href="https://github.com/IbrahimsDataVault">IbrahimsDataVault</a></li>
+</ul>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#Problem">Problem</a></li>
+<li><a href="#Data-Source">Data Source</a></li>
+<li><a href="#Methods">Methods</a>
+<ul>
+<li><a href="#Data-Cleaning">Data Cleaning</a></li>
+<li><a href="#Data-Visualization">Data Visualization</a></li>
+</ul></li>
+<li><a href="#Conclusion">Conclusion</a></li>
+<li><a href="#solutions-and-next-steps">Solutions and Next Steps</a></li>
+</ul>
+<h2 id="problem">Problem</h2>
+<p>In this case study, I analyzed data on COVID-19 infection rates and death counts. The goal of this analysis is to understand the spread of the virus and identify any patterns or trends that can help inform policy decisions. The data will be cleaned and organized in SQL, and then visualized using Tableau to gain insights.</p>
+<h2 id="data-source">Data Source</h2>
+<p><a href="https://ourworldindata.org/covid-deaths">https://ourworldindata.org/covid-deaths</a></p>
+<h2 id="section"></h2>
+<h2 id="methods">Methods</h2>
+<ul>
+<li>SQL BigQuery was was used to query the data and derive 4 independent tables</li>
+<li>the 4 tables were analyzed and visualized using Tableau</li>
+</ul>
+<h3 id="data-cleaning">Data Cleaning</h3>
+<h4 id="table-1">Table 1:</h4>
+<p>Wrote a query to calculate the death percentage on the global scale by summing up all the 'new cases' column and 'new deaths' column from the entire world and then calculating the percentage of deaths from the cases. I specified <code>WHERE continent IS NOT NULL</code> because every country belongs to a continent, So by specifying <code>WHERE continent IS NOT NULL</code> will ensure that only the rows for the countries that have a continent specified will be included in the final results. This will give accurate results for the death percentage on the global scale as it will not consider the rows where the continent is not specified.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">--1. compare the overall deaths to cases ratio for the entire world</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="kw">SELECT</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="fu">SUM</span>(new_cases) <span class="kw">as</span> total_cases,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>  <span class="fu">SUM</span>(new_deaths) <span class="kw">as</span> total_deaths,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>  (<span class="fu">SUM</span>(new_deaths)<span class="op">/</span><span class="fu">SUM</span>(new_cases))<span class="op">*</span><span class="dv">100</span> <span class="kw">AS</span> death_percentage</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="kw">FROM</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>  `sql<span class="op">-</span>portfolio<span class="op">-</span>project<span class="op">-</span><span class="fl">375703.</span>Portfolio_Project.Covid Deaths `</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="kw">WHERE</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>  continent <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>  <span class="dv">1</span>,<span class="dv">2</span></span></code></pre></div>
+  <img width="440" alt="image" src="https://user-images.githubusercontent.com/123592482/215175883-5b0dafea-c691-4bb2-a4a9-3c111306ec8c.png">
+
+<h4 id="table-2">Table 2:</h4>
+<p>Wrote a query to pull the total death count for each continent while filtering out specific values in the 'location' column ('income'(upper, middle, lower class), 'World', 'European Union' and 'International') that is displayed in the 'location' column. This query gives the total death count for continents and makes sure that the rows with 'income'(upper, middle, lower class), 'World', 'European Union' and 'International' are not considered in the final results.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">--2. Pull the &#39;total_death_count&#39; for each continent in the location column while filtering out the income (upper, middle, lower class), World, European Union, and International rows that&#39;s displayed in the location column</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="kw">SELECT</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a> location,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a> <span class="fu">SUM</span>(new_deaths) <span class="kw">AS</span> total_death_count</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="kw">FROM</span> </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a> `sql<span class="op">-</span>portfolio<span class="op">-</span>project<span class="op">-</span><span class="fl">375703.</span>Portfolio_Project.Covid Deaths `</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="kw">WHERE</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a> continent <span class="kw">IS</span> <span class="kw">NULL</span> <span class="kw">AND</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a> location <span class="kw">NOT</span> <span class="kw">LIKE</span> <span class="st">&#39;%income%&#39;</span> <span class="kw">AND</span> </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a> location <span class="kw">NOT</span> <span class="kw">LIKE</span> <span class="st">&#39;%World%&#39;</span> <span class="kw">AND</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a> location <span class="kw">NOT</span> <span class="kw">LIKE</span> <span class="st">&#39;%European Union%&#39;</span> <span class="kw">AND</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a> location <span class="kw">NOT</span> <span class="kw">LIKE</span> <span class="st">&#39;%International%&#39;</span> </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a> location</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span> </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a> total_death_count <span class="kw">DESC</span></span></code></pre></div>
+ <img width="392" alt="image" src="https://user-images.githubusercontent.com/123592482/215176243-816edfcc-ea15-4618-a70c-10c0e62e9ab3.png">
+
+<h4 id="table-3">Table 3:</h4>
+<p>Wrote a query to pull the data for the countries with the highest infection rate per population. I then computed the infection percent per population by dividing the total cases by population and multiplying the result by 100. It filters the rows where the location contains 'income' and groups the results by location and population and orders the results by the highest infection percent per population.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">--3. Countries with highest infection rate per population</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="kw">SELECT</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a> location,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a> population,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a> <span class="fu">MAX</span>(total_cases) <span class="kw">AS</span> highest_infection_count,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a> <span class="fu">MAX</span>((total_cases<span class="op">/</span>population)) <span class="op">*</span> <span class="dv">100</span> <span class="kw">AS</span> infection_percent_per_population</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="kw">FROM</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a> `sql<span class="op">-</span>portfolio<span class="op">-</span>project<span class="op">-</span><span class="fl">375703.</span>Portfolio_Project.Covid Deaths `</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a><span class="kw">WHERE</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a> location <span class="kw">NOT</span> <span class="kw">LIKE</span> <span class="st">&#39;%income%&#39;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a> location,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a> population</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a> infection_percent_per_population <span class="kw">DESC</span></span></code></pre></div>
+ <img width="966" alt="image" src="https://user-images.githubusercontent.com/123592482/215180014-8f896c9e-4fca-422b-bee4-74b546f04b86.png">
+
+<h4 id="table-4">Table 4:</h4>
+<p>This last query is similiar to the previous one but it also includes the 'date' column in the SELECT statement and in the GROUP BY clause. It is pulling the data for the countries with the highest infection rate per population grouped by date. It is computing the infection percent per population by dividing the total cases by population and multiplying the result by 100. It filters the rows where the location contains 'income' and groups the results by location, population, and date and orders the results by the highest infection percent per population.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">--4. Countries with highest infection rate per population grouped by date </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="kw">SELECT</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a> location,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a> population,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a> <span class="dt">date</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a> <span class="fu">MAX</span>(total_cases) <span class="kw">AS</span> highest_infection_count,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a> <span class="fu">MAX</span>((total_cases<span class="op">/</span>population)) <span class="op">*</span> <span class="dv">100</span> <span class="kw">AS</span> infection_percent_per_population</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a><span class="kw">FROM</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a> `sql<span class="op">-</span>portfolio<span class="op">-</span>project<span class="op">-</span><span class="fl">375703.</span>Portfolio_Project.Covid Deaths `</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a><span class="kw">WHERE</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a> location <span class="kw">NOT</span> <span class="kw">LIKE</span> <span class="st">&#39;%income%&#39;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a><span class="kw">GROUP</span> <span class="kw">BY</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a> location,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a> population,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a> <span class="dt">date</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a><span class="kw">ORDER</span> <span class="kw">BY</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a> infection_percent_per_population <span class="kw">DESC</span></span></code></pre></div>
+ <img width="962" alt="image" src="https://user-images.githubusercontent.com/123592482/215180802-b08918ea-6131-4fa0-b4d2-3e5701a48061.png">
+
+<h3 id="data-visualization">Data Visualization</h3>
+<h4 id="table-1-1">Table 1:</h4>
+<img width="587" alt="image" src="https://user-images.githubusercontent.com/123592482/215181074-97858872-e6a1-4004-b226-37380a4d6f1e.png">
+
+<h4 id="table-2-1">Table 2:</h4>
+<img width="890" alt="image" src="https://user-images.githubusercontent.com/123592482/215181305-d95887f1-c75f-44b0-aa99-ad10a8a75c9d.png">
+
+<h4 id="table-3-1">Table 3:</h4>
+<img width="865" alt="image" src="https://user-images.githubusercontent.com/123592482/215181878-d978f91d-ac59-4bc3-9b3e-7932a9b491bc.png">
+
+<h4 id="table-4-1">Table 4</h4>
+<img width="995" alt="image" src="https://user-images.githubusercontent.com/123592482/215182431-08da3d59-5c8d-4aa3-b686-54720e72c263.png">
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Key findings from the dashboard until the date of knowledge cutoff (Jan 2023) show that about 1 percent of the world's population who have been infected with COVID-19 have died, and Europe leads the world with the highest infection death count and infection rate in the world. This information can be used by policymakers and healthcare professionals to make informed decisions about how to respond to the pandemic. I will continue to update the dashboard and case study to reflect the most current data and insights. The goal of this analysis is to help stakeholders understand the spread of the virus and take action to slow its spread and save lives.</p>
+<h2 id="solutions-and-next-steps">Solutions and Next Steps</h2>
+<p>Based on the data findings vizualized by the Tableau Dashboard, here are 5 solutions that can be proposed to address the COVID-19 pandemic:</p>
+<ol>
+<li>Increased Vaccination Efforts in Europe: Europe has the highest death count among the continents, and many countries in Europe have high infection rates. By increasing vaccination efforts in Europe, we can protect the population and potentially reduce the death count.</li>
+<li>Targeted Testing and Contact Tracing in High-Risk Countries: Cyprus and South Korea have some of the highest infection rates in the world. By targeting testing and contact tracing efforts in these countries, we can identify and isolate infected individuals more effectively, slowing the spread of the virus.</li>
+<li>Hospital preparedness: Since Europe has high death rate, it's important to ensure that hospitals and health care systems in Europe are prepared to handle the influx of patients. This includes having enough beds, oxygen, and other resources to provide adequate care for those who are critically ill.</li>
+<li>Public awareness campaigns : Public awareness campaigns can be targeted in Europe, Cyprus and South Korea to educate people about the importance of vaccination, testing, and contact tracing. This can help increase compliance with public health guidelines and slow the spread of the virus.</li>
+<li>Remote work: Encourage remote work in Europe, Cyprus and South Korea, to reduce the spread of the virus.</li>
+</ol>
