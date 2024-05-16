@@ -1,61 +1,509 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Netflix Movie Duration Analysis</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-91KT4R27P2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-91KT4R27P2');
+    </script>
+    <title>Analyzing Trends in Movie Durations on Netflix</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+    </style>
 </head>
 <body class="is-preload">
 
+    <!-- Page Wrapper -->
     <div id="page-wrapper">
 
+        <!-- Header -->
         <header id="header">
-            <h1><a href="index.html">Netflix Movie Duration Analysis</a></h1>
+            <h1><a href="index.html">Analyzing Trends in Movie Durations on Netflix</a></h1>
             <nav>
                 <a href="#menu">Menu</a>
             </nav>
         </header>
 
+        <!-- Menu -->
         <nav id="menu">
             <div class="inner">
                 <h2>Menu</h2>
                 <ul class="links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="NetflixAnalysis.html">Netflix Analysis</a></li>
+                    <li><a href="CovidClean.html">COVID-19 Data Cleaning</a></li>
+                    <li><a href="CovidTableau.html">COVID-19 Data Visualization</a></li>
+                    <li><a href="Rggplot.html">R and ggplot: A Guide to Data Visualization</a></li>
+                    <li><a href="SATPerformance.html">SAT Performance Analysis</a></li>
                     <li><a href="#Get-In-Touch">Contact</a></li>
                 </ul>
                 <a href="#" class="close">Close</a>
             </div>
         </nav>
 
+        <!-- Wrapper -->
         <section id="wrapper">
             <header>
                 <div class="inner">
-                    <h2>Netflix Movie Duration Analysis</h2>
-                    <img src="redpopcorn.jpg" alt="Movie popcorn on red background" width="500">
-                    <p>An in-depth exploration of trends in movie durations on Netflix, using Python and Matplotlib for data analysis.</p>
+                    <h2>Analyzing Trends in Movie Durations on Netflix</h2>
+                    <p>This project explores the intriguing possibility of changing movie durations on Netflix, leveraging my skills in exploratory data analysis to uncover trends in the entertainment industry.</p>
                 </div>
             </header>
 
+            <!-- Content -->
             <div class="wrapper">
                 <div class="inner">
-                    <h2 class="major">Project Overview</h2>
-                    <p>This project explores the possibility of changing movie durations on Netflix, leveraging skills in exploratory data analysis to uncover trends in the entertainment industry. The analysis tested the hypothesis that the average length of movies on Netflix has been decreasing over time.</p>
+                    <h3 class="major">Project Overview</h3>
+                    <h4>Objectives:</h4> 
+                    <p>To verify the trend of decreasing movie durations using exploratory data analysis techniques and identify factors that could be contributing to changes in movie lengths.</p>
                     
-                    <h2>Python Code Example</h2>
-                    <pre><code class="python">
-# Importing libraries
-import pandas as pd
-import matplotlib.pyplot as plt
+                    <h4>Methods:</h4>
+                    <ul>
+                        <li>Utilized Python for data manipulation and analysis, focusing on cleaning and structuring the data for effective analysis.</li>
+                        <li>Conducted statistical analyses to understand the central tendencies and distributions within the dataset.</li>
+                        <li>Applied visualization techniques to illustrate trends and patterns related to movie durations.</li>
+                    </ul>
+                    
+                    <h4>Results:</h4>
+                    <p>The analysis confirmed a noticeable trend in the shortening of movie lengths on Netflix. Several factors influencing this trend were identified, including genre shifts, production constraints, and changing viewer preferences.</p>
 
-# Loading data
+                    <h4>Conclusion:</h4>
+                    <p>This project not only supported the initial hypothesis but also sharpened my analytical skills and provided insights into the dynamics of content duration within major streaming platforms. The findings have implications for content creators and marketers in the entertainment industry.</p>
+
+                    <h4>The Data:</h4>
+                    <p>Below is a snapshot of the dataset used for this analysis:</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Column</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>show_id</td>
+                                <td>The ID of the show</td>
+                            </tr>
+                            <tr>
+                                <td>type</td>
+                                <td>Type of show</td>
+                            </tr>
+                            <tr>
+                                <td>title</td>
+                                <td>Title of the show</td>
+                            </tr>
+                            <tr>
+                                <td>director</td>
+                                <td>Director of the show</td>
+                            </tr>
+                            <tr>
+                                <td>cast</td>
+                                <td>Cast of the show</td>
+                            </tr>
+                            <tr>
+                                <td>country</td>
+                                <td>Country of origin</td>
+                            </tr>
+                            <tr>
+                                <td>date_added</td>
+                                <td>Date added to Netflix</td>
+                            </tr>
+                            <tr>
+                                <td>release_year</td>
+                                <td>Year of Netflix release</td>
+                            </tr>
+                            <tr>
+                                <td>duration</td>
+                                <td>Duration of the show in minutes</td>
+                            </tr>
+                            <tr>
+                                <td>description</td>
+                                <td>Description of the show</td>
+                            </tr>
+                            <tr>
+                                <td>genre</td>
+                                <td>Show genre</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Python Code and Outputs:</h4>
+
+                    <h5>1. Load the CSV file and store as netflix_df.</h5>
+                    <pre><code>
+import pandas as pd
+
+# Load the CSV file and store as netflix_df
 netflix_df = pd.read_csv("netflix_data.csv")
+
+# Display the first few rows of the dataframe
+print(netflix_df.head())
+                    </code></pre>
+                    <h5>Output:</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>show_id</th>
+                                <th>type</th>
+                                <th>title</th>
+                                <th>director</th>
+                                <th>cast</th>
+                                <th>country</th>
+                                <th>date_added</th>
+                                <th>release_year</th>
+                                <th>duration</th>
+                                <th>description</th>
+                                <th>genre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>s1</td>
+                                <td>TV Show</td>
+                                <td>3%</td>
+                                <td>null</td>
+                                <td>João Miguel, Bianca Comparato, Michel Gomes, Rodolfo Valente, Vaneza Oliveira, Rafael Lozano, Viviane Porto, Mel Fronckowiak, Sergio Mamberti, Zezé Motta, Celso Frateschi</td>
+                                <td>Brazil</td>
+                                <td>August 14, 2020</td>
+                                <td>2020</td>
+                                <td>4</td>
+                                <td>In a future where the elite inhabit an island paradise far from the crowded slums, you get one chance to join the 3% saved from squalor.</td>
+                                <td>International TV</td>
+                            </tr>
+                            <tr>
+                                <td>s2</td>
+                                <td>Movie</td>
+                                <td>7:19</td>
+                                <td>Jorge Michel Grau</td>
+                                <td>Demián Bichir, Héctor Bonilla, Oscar Serrano, Azalia Ortiz, Octavio Michel, Carmen Beato</td>
+                                <td>Mexico</td>
+                                <td>December 23, 2016</td>
+                                <td>2016</td>
+                                <td>93</td>
+                                <td>After a devastating earthquake hits Mexico City, trapped survivors from all walks of life wait to be rescued while trying desperately to stay alive.</td>
+                                <td>Dramas</td>
+                            </tr>
+                            <tr>
+                                <td>s3</td>
+                                <td>Movie</td>
+                                <td>23:59</td>
+                                <td>Gilbert Chan</td>
+                                <td>Tedd Chan, Stella Chung, Henley Hii, Lawrence Koh, Tommy Kuan, Josh Lai, Mark Lee, Susan Leong, Benjamin Lim</td>
+                                <td>Singapore</td>
+                                <td>December 20, 2018</td>
+                                <td>2011</td>
+                                <td>78</td>
+                                <td>When an army recruit is found dead, his fellow soldiers are forced to confront a terrifying secret that's haunting their jungle island training camp.</td>
+                                <td>Horror Movies</td>
+                            </tr>
+                            <tr>
+                                <td>s4</td>
+                                <td>Movie</td>
+                                <td>9</td>
+                                <td>Shane Acker</td>
+                                <td>Elijah Wood, John C. Reilly, Jennifer Connelly, Christopher Plummer, Crispin Glover, Martin Landau, Fred Tatasciore, Alan Oppenheimer, Tom Kane</td>
+                                <td>United States</td>
+                                <td>November 16, 2017</td>
+                                <td>2009</td>
+                                <td>80</td>
+                                <td>In a postapocalyptic world, rag-doll robots hide in fear from dangerous machines out to exterminate them, until a brave newcomer joins the group.</td>
+                                <td>Action</td>
+                            </tr>
+                            <tr>
+                                <td>s5</td>
+                                <td>Movie</td>
+                                <td>21</td>
+                                <td>Robert Luketic</td>
+                                <td>Jim Sturgess, Kevin Spacey, Kate Bosworth, Aaron Yoo, Liza Lapira, Jacob Pitts, Laurence Fishburne, Jack McGee, Josh Gad, Sam Golzari, Helen Carey, Jack Gilpin</td>
+                                <td>United States</td>
+                                <td>January 1, 2020</td>
+                                <td>2008</td>
+                                <td>123</td>
+                                <td>A brilliant group of students become card-counting experts with the intent of swindling millions out of Las Vegas casinos by playing blackjack.</td>
+                                <td>Dramas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h5>2. Filter the data to remove TV shows and store as netflix_subset.</h5>
+                    <pre><code>
+# Filter the data to remove TV shows and store as netflix_subset
 netflix_subset = netflix_df[netflix_df["type"] != 'TV Show']
+
+# Display the first few rows of the subsetted dataframe
+print(netflix_subset.head())
+                    </code></pre>
+                    <h5>Output:</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>show_id</th>
+                                <th>type</th>
+                                <th>title</th>
+                                <th>director</th>
+                                <th>cast</th>
+                                <th>country</th>
+                                <th>date_added</th>
+                                <th>release_year</th>
+                                <th>duration</th>
+                                <th>description</th>
+                                <th>genre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>s2</td>
+                                <td>Movie</td>
+                                <td>7:19</td>
+                                <td>Jorge Michel Grau</td>
+                                <td>Demián Bichir, Héctor Bonilla, Oscar Serrano, Azalia Ortiz, Octavio Michel, Carmen Beato</td>
+                                <td>Mexico</td>
+                                <td>December 23, 2016</td>
+                                <td>2016</td>
+                                <td>93</td>
+                                <td>After a devastating earthquake hits Mexico City, trapped survivors from all walks of life wait to be rescued while trying desperately to stay alive.</td>
+                                <td>Dramas</td>
+                            </tr>
+                            <tr>
+                                <td>s3</td>
+                                <td>Movie</td>
+                                <td>23:59</td>
+                                <td>Gilbert Chan</td>
+                                <td>Tedd Chan, Stella Chung, Henley Hii, Lawrence Koh, Tommy Kuan, Josh Lai, Mark Lee, Susan Leong, Benjamin Lim</td>
+                                <td>Singapore</td>
+                                <td>December 20, 2018</td>
+                                <td>2011</td>
+                                <td>78</td>
+                                <td>When an army recruit is found dead, his fellow soldiers are forced to confront a terrifying secret that's haunting their jungle island training camp.</td>
+                                <td>Horror Movies</td>
+                            </tr>
+                            <tr>
+                                <td>s4</td>
+                                <td>Movie</td>
+                                <td>9</td>
+                                <td>Shane Acker</td>
+                                <td>Elijah Wood, John C. Reilly, Jennifer Connelly, Christopher Plummer, Crispin Glover, Martin Landau, Fred Tatasciore, Alan Oppenheimer, Tom Kane</td>
+                                <td>United States</td>
+                                <td>November 16, 2017</td>
+                                <td>2009</td>
+                                <td>80</td>
+                                <td>In a postapocalyptic world, rag-doll robots hide in fear from dangerous machines out to exterminate them, until a brave newcomer joins the group.</td>
+                                <td>Action</td>
+                            </tr>
+                            <tr>
+                                <td>s5</td>
+                                <td>Movie</td>
+                                <td>21</td>
+                                <td>Robert Luketic</td>
+                                <td>Jim Sturgess, Kevin Spacey, Kate Bosworth, Aaron Yoo, Liza Lapira, Jacob Pitts, Laurence Fishburne, Jack McGee, Josh Gad, Sam Golzari, Helen Carey, Jack Gilpin</td>
+                                <td>United States</td>
+                                <td>January 1, 2020</td>
+                                <td>2008</td>
+                                <td>123</td>
+                                <td>A brilliant group of students become card-counting experts with the intent of swindling millions out of Las Vegas casinos by playing blackjack.</td>
+                                <td>Dramas</td>
+                            </tr>
+                            <tr>
+                                <td>s7</td>
+                                <td>Movie</td>
+                                <td>122</td>
+                                <td>Yasir Al Yasiri</td>
+                                <td>Amina Khalil, Ahmed Dawood, Tarek Lotfy, Ahmed El Fishawy, Mahmoud Hijazi, Jihane Khalil, Asmaa Galal, Tara Emad</td>
+                                <td>Egypt</td>
+                                <td>June 1, 2020</td>
+                                <td>2019</td>
+                                <td>95</td>
+                                <td>After an awful accident, a couple admitted to a grisly hospital are separated and must find each other to escape — before death finds them.</td>
+                                <td>Horror Movies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h5>3. Subset the Netflix movie data, keeping only the columns "title", "country", "genre", "release_year", "duration" into a new DataFrame netflix_movies.</h5>
+                    <pre><code>
+# Subset the Netflix movie data, keeping only the columns "title", "country", "genre", "release_year", "duration"
 netflix_movies = netflix_subset[['title', 'country', 'genre', 'release_year', 'duration']]
+
+# Display the first few rows of the new dataframe
+print(netflix_movies.head())
+                    </code></pre>
+                    <h5>Output:</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>title</th>
+                                <th>country</th>
+                                <th>genre</th>
+                                <th>release_year</th>
+                                <th>duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>7:19</td>
+                                <td>Mexico</td>
+                                <td>Dramas</td>
+                                <td>2016</td>
+                                <td>93</td>
+                            </tr>
+                            <tr>
+                                <td>23:59</td>
+                                <td>Singapore</td>
+                                <td>Horror Movies</td>
+                                <td>2011</td>
+                                <td>78</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>United States</td>
+                                <td>Action</td>
+                                <td>2009</td>
+                                <td>80</td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td>United States</td>
+                                <td>Dramas</td>
+                                <td>2008</td>
+                                <td>123</td>
+                            </tr>
+                            <tr>
+                                <td>122</td>
+                                <td>Egypt</td>
+                                <td>Horror Movies</td>
+                                <td>2019</td>
+                                <td>95</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h5>4. Filter movies that are shorter than 1 hour and save as short_movies.</h5>
+                    <pre><code>
+# Filter movies that are shorter than 1 hour and save as short_movies
 short_movies = netflix_movies[netflix_movies['duration']<60]
 
+# Display the first few rows of the filtered dataframe
+print(short_movies)
+                    </code></pre>
+                    <h5>Output:</h5>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>title</th>
+                                <th>country</th>
+                                <th>genre</th>
+                                <th>release_year</th>
+                                <th>duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#Rucker50</td>
+                                <td>United States</td>
+                                <td>Documentaries</td>
+                                <td>2016</td>
+                                <td>56</td>
+                            </tr>
+                            <tr>
+                                <td>100 Things to do Before High School</td>
+                                <td>United States</td>
+                                <td>Uncategorized</td>
+                                <td>2014</td>
+                                <td>44</td>
+                            </tr>
+                            <tr>
+                                <td>13TH: A Conversation with Oprah Winfrey & Ava DuVernay</td>
+                                <td>null</td>
+                                <td>Uncategorized</td>
+                                <td>2017</td>
+                                <td>37</td>
+                            </tr>
+                            <tr>
+                                <td>3 Seconds Divorce</td>
+                                <td>Canada</td>
+                                <td>Documentaries</td>
+                                <td>2018</td>
+                                <td>53</td>
+                            </tr>
+                            <tr>
+                                <td>A 3 Minute Hug</td>
+                                <td>Mexico</td>
+                                <td>Documentaries</td>
+                                <td>2019</td>
+                                <td>28</td>
+                            </tr>
+                            <tr>
+                                <td>A Christmas Special: Miraculous: Tales of Ladybug & Cat Noir</td>
+                                <td>France</td>
+                                <td>Uncategorized</td>
+                                <td>2016</td>
+                                <td>22</td>
+                            </tr>
+                            <tr>
+                                <td>A Family Reunion Christmas</td>
+                                <td>United States</td>
+                                <td>Uncategorized</td>
+                                <td>2019</td>
+                                <td>29</td>
+                            </tr>
+                            <tr>
+                                <td>A Go! Go! Cory Carson Christmas</td>
+                                <td>United States</td>
+                                <td>Children</td>
+                                <td>2020</td>
+                                <td>22</td>
+                            </tr>
+                            <tr>
+                                <td>A Go! Go! Cory Carson Halloween</td>
+                                <td>null</td>
+                                <td>Children</td>
+                                <td>2020</td>
+                                <td>22</td>
+                            </tr>
+                            <tr>
+                                <td>A Go! Go! Cory Carson Summer Camp</td>
+                                <td>null</td>
+                                <td>Children</td>
+                                <td>2020</td>
+                                <td>21</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h5>5. Create a scatter plot for movie duration by release year using genre-based colors.</h5>
+                    <pre><code>
+import matplotlib.pyplot as plt
+
+# Create colors list based on genre
 colors = []
 for lab, row in netflix_movies.iterrows():
     if row['genre'] == "Children":
@@ -66,41 +514,66 @@ for lab, row in netflix_movies.iterrows():
         colors.append('blue')
     else:
         colors.append('grey')
-
-plt.scatter(netflix_movies['release_year'], netflix_movies['duration'], color=colors)
-plt.xlabel('Release year'); plt.ylabel('Duration (min)')
-plt.title('Movie Duration by Year of Release')
+        
+# Initialize a matplotlib figure object called fig and create a scatter plot
+fig = plt.figure()
+plt.scatter(netflix_movies['release_year'], netflix_movies['duration'], color = colors)
+plt.xlabel('Release year'); plt.ylabel('Duration (min)'); plt.title('Movie Duration by Year of Release')
 plt.show()
                     </code></pre>
+                    <h5>Output:</h5>
+                    <img src="movie_durations_by _year.png" alt="Movie Duration by Year of Release">
 
-                    <h2>Results</h2>
-                    <p>The analysis confirmed a noticeable trend in the shortening of movie lengths on Netflix. Several factors influencing this trend were identified, including genre shifts, production constraints, and changing viewer preferences.</p>
-
-                    <h2>Data and Notebooks</h2>
-                    <p>The dataset and Jupyter notebook used in this analysis are available for download:</p>
-                    <ul>
-                        <li><a href="Netflix_Project/netflix_data.csv" download="netflix_data.csv">Download Netflix Dataset</a></li>
-                        <li><a href="Netflix_Project/notebook.ipynb" download="notebook.ipynb">Download Jupyter Notebook</a></li>
-                    </ul>
-
-                    <h2>Contact Information</h2>
-                    <p>If you have questions about this analysis or wish to discuss it further, please feel free to contact me.</p>
+                    <h5>6. Answer the question "Are we certain that movies are getting shorter?"</h5>
+                    <p>Based on the scatter plot, it is not definitively clear that movies are consistently getting shorter over time. There are fluctuations in movie durations across different release years, suggesting that other factors, such as genre and production constraints, may play a significant role in determining movie lengths.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Footer -->
         <section id="footer">
             <div class="inner">
                 <h2 class="major">Get in touch</h2>
-                <p>If you're interested in my work or have any queries, feel free to reach out via email or LinkedIn.</p>
+                <p>Thank you for visiting my website. If you have any questions or would like to work with me, please feel free to reach out to me. You can also connect with me on Linkedin. I look forward to hearing from you!</p>
+                <form method="post" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScF2Wgr1EKn7NVFL51BMSaGjfR3KDLaG9L_kx_Kic0XU6OLTQ/formResponse">
+                    <div class="fields">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input type="text" name="entry.1891781582" id="name" />
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" name="entry.615352512" id="email" />
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea name="entry.1960583409" id="message" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Send Message" /></li>
+                        <li><a href="Ibrahim Resume.pdf" class="button primary">My Resume</a></li>
+                    </ul>
+                </form>
                 <ul class="contact">
-                    <li class="icon solid fa-envelope"><a href="mailto:your-email@example.com">your-email@example.com</a></li>
-                    <li class="icon brands fa-linkedin"><a href="your-linkedin">your LinkedIn</a></li>
+                    <li class="icon solid fa-home">
+                        Anywhere, Anytime:<br />
+                        Available to work remotely from any location<br />
+                    </li>
+                    <li class="icon solid fa-phone">(214) 235-1048)</li>
+                    <li class="icon solid fa-envelope"><a href="mailto:iaibrahim.ibrahim@gmail.com">iaibrahim.ibrahim@gmail.com</a></li>
+                    <li href="https://www.linkedin.com/in/ibrahimai/" class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/ibrahimai/">https://www.linkedin.com/in/ibrahimai/</a></li>
+                    <li href="#" class="icon brands fa-github"><a href="https://github.com/IbrahimsDataVault">https://github.com/IbrahimsDataVault</a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2022 Ibrahim's Data Vault - All rights reserved.</li>
                 </ul>
             </div>
         </section>
+
     </div>
 
+    <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
