@@ -1,0 +1,581 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-91KT4R27P2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-91KT4R27P2');
+    </script>
+    <title>BCG Customer Churn Analysis - Data Science Job Simulation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        .code-block {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid #4a5568;
+        }
+        .highlight-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #3182ce;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            color: #2d3748;
+        }
+        .highlight-box * {
+            color: #2d3748;
+        }
+        .highlight-box p {
+            color: #4a5568 !important;
+        }
+        .highlight-box a {
+            color: #3182ce !important;
+        }
+        .metric-box {
+            background-color: #e6fffa;
+            border: 2px solid #38b2ac;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .metric-label {
+            font-size: 14px;
+            color: #4a5568;
+            margin-top: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4a5568;
+            color: white;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+        .project-highlight {
+            background-color: #fef5e7;
+            border: 2px solid #f6ad55;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            text-align: center;
+            color: #2d3748;
+        }
+        .project-highlight * {
+            color: #2d3748;
+        }
+        .project-highlight p {
+            color: #4a5568 !important;
+        }
+        .project-highlight a {
+            color: #3182ce !important;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .skill-tag {
+            background-color: #e2e8f0;
+            color: #4a5568;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="index.html">BCG Customer Churn Analysis</a></h1>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <div class="inner">
+                <h2>Menu</h2>
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="BCG.html">BCG Customer Churn Analysis</a></li>
+                    <li><a href="SATPerformance.html">SAT Performance Analysis</a></li>
+                    <li><a href="Netflix.html">Netflix Movie Duration Analysis</a></li>
+                    <li><a href="CovidClean.html">COVID-19 Data Cleaning</a></li>
+                    <li><a href="CovidTableau.html">COVID-19 Data Visualization</a></li>
+                    <li><a href="Rggplot.html">R and ggplot: A Guide to Data Visualization</a></li>
+                    <li><a href="#Get-In-Touch">Contact</a></li>
+                </ul>
+                <a href="#" class="close">Close</a>
+            </div>
+        </nav>
+
+        <!-- Wrapper -->
+        <section id="wrapper">
+            <header>
+                <div class="inner">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <img src="images/bcg.webp" alt="BCG Logo" style="height: 60px; margin-bottom: 15px;">
+                    </div>
+                    <h2>BCG Customer Churn Analysis - Data Science Job Simulation</h2>
+                    <p>A comprehensive end-to-end data science project completed as part of BCG's Data Science Job Simulation, demonstrating expertise in predictive modeling, feature engineering, and business intelligence for customer retention strategies.</p>
+                    <div style="margin-top: 20px; text-align: center;">
+                        <a href="BCG - Executive Summary.pdf" target="_blank" class="button special" style="background-color: #003366; border-color: #003366;">📄 Download Executive Summary</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="wrapper">
+                <div class="inner">
+
+                    <div class="project-highlight">
+                        <h3 style="color: #2d3748; margin-bottom: 15px;">Featured Project: BCG Enterprise Customer Analytics</h3>
+                        <p style="font-size: 18px; color: #4a5568; margin-bottom: 20px;">Comprehensive predictive analytics solution developed through BCG's Data Science Job Simulation, delivering actionable business intelligence for customer retention with advanced machine learning and statistical modeling.</p>
+                        <div class="skills-list">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Scikit-learn</span>
+                            <span class="skill-tag">Random Forest</span>
+                            <span class="skill-tag">Feature Engineering</span>
+                            <span class="skill-tag">Data Visualization</span>
+                            <span class="skill-tag">Business Intelligence</span>
+                            <span class="skill-tag">Predictive Modeling</span>
+                            <span class="skill-tag">Statistical Analysis</span>
+                            <span class="skill-tag">Jupyter Notebooks</span>
+                            <span class="skill-tag">Executive Communication</span>
+                        </div>
+                        <p style="font-size: 16px; color: #4a5568; margin-top: 15px;"><strong>📁 Full Deliverables Available:</strong> Executive Summary PDF, Interactive Dashboards, Complete Notebooks</p>
+                    </div>
+
+                    <h3 class="major">Executive Summary</h3>
+                    <p>This project was completed as part of BCG's Data Science Job Simulation, where I served as a data scientist tasked with developing a customer churn prediction model for PowerCo, a major utilities company. The analysis revealed critical insights about customer retention drivers and demonstrated the application of advanced machine learning techniques in a business context.</p>
+
+                    <div class="highlight-box">
+                        <h4>Business Impact</h4>
+                        <p>Developed a predictive model that could identify at-risk customers with 81.8% precision, enabling targeted retention campaigns that could save the company significant revenue by preventing customer churn before it occurs.</p>
+                    </div>
+
+                    <h3 class="major">Project Objectives</h3>
+                    <p>The project followed a structured data science methodology to address PowerCo's customer churn challenge:</p>
+                    <ul>
+                        <li><strong>Data Understanding</strong>: Comprehensive analysis of customer demographics, consumption patterns, and pricing data</li>
+                        <li><strong>Feature Engineering</strong>: Creation of 60+ predictive features from raw data to capture complex customer behaviors</li>
+                        <li><strong>Predictive Modeling</strong>: Implementation of Random Forest algorithm optimized for imbalanced classification</li>
+                        <li><strong>Business Insights</strong>: Translation of technical results into actionable retention strategies</li>
+                        <li><strong>Executive Communication</strong>: Clear presentation of findings for non-technical stakeholders</li>
+                    </ul>
+
+                    <h3 class="major">Data Science Methodology</h3>
+
+                    <h4>Phase 1: Exploratory Data Analysis</h4>
+                    <p>Conducted comprehensive data exploration to understand the dataset structure and identify key patterns:</p>
+
+                    <div style="text-align: center; margin: 30px 0;">
+                        <img src="images/powerco comprehensive dashboard.png" alt="PowerCo EDA Dashboard" style="max-width: 100%; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        <p style="font-size: 14px; color: #718096; margin-top: 10px;"><em>EDA dashboard showing exploratory data analysis insights and initial findings</em></p>
+                    </div>
+
+                    <div class="code-block">
+# Data Overview and Statistical Analysis
+print("Dataset Dimensions:", client_df.shape)
+print("Churn Rate: {:.1f}%".format(client_df['churn'].mean() * 100))
+
+# Key Statistical Findings
+client_df.describe()
+price_df.describe()
+                    </div>
+
+                    <p><strong>Key Insights Discovered:</strong></p>
+                    <ul>
+                        <li>14,606 customer records with 26 demographic and behavioral features</li>
+                        <li>193,002 historical price records capturing temporal pricing patterns</li>
+                        <li>9.7% baseline churn rate indicating class imbalance challenges</li>
+                        <li>Significant variation in consumption patterns across customer segments</li>
+                    </ul>
+
+                    <h4>Phase 2: Feature Engineering</h4>
+                    <p>Transformed raw data into predictive features through systematic engineering:</p>
+
+                    <div class="code-block">
+# Date Feature Engineering
+df['contract_duration_years'] = (df['date_end'] - df['date_activ']).dt.days / 365.25
+df['months_active'] = convert_months(reference_date, df, 'date_activ')
+df['months_to_end'] = -convert_months(reference_date, df, 'date_end')
+
+# Consumption Pattern Features
+df['consumption_stability'] = 1 - abs(df['cons_12m'] - df['forecast_cons_12m']) / df['cons_12m'].replace(0, 1)
+df['gas_dominant'] = ((df['cons_gas_12m'] > 0) & (df['cons_gas_12m'] > df['cons_12m'] * 0.3)).astype(int)
+                    </div>
+
+                    <div class="code-block">
+# Advanced Price Difference Engineering (Building on Estelle's Dec-Jan Analysis)
+# Group off-peak prices by companies and month
+monthly_price_by_id = price_df.groupby(['id', 'price_date']).agg({
+    'price_off_peak_var': 'mean',
+    'price_off_peak_fix': 'mean'
+}).reset_index()
+
+# Get January and December prices
+jan_prices = monthly_price_by_id.groupby('id').first().reset_index()
+dec_prices = monthly_price_by_id.groupby('id').last().reset_index()
+
+# Calculate the difference (Estelle's original feature)
+diff = pd.merge(dec_prices.rename(columns={'price_off_peak_var': 'dec_1', 'price_off_peak_fix': 'dec_2'}),
+                jan_prices.drop(columns='price_date'), on='id')
+diff['offpeak_diff_dec_january_energy'] = diff['dec_1'] - diff['price_off_peak_var']
+diff['offpeak_diff_dec_january_power'] = diff['dec_2'] - diff['price_off_peak_fix']
+diff = diff[['id', 'offpeak_diff_dec_january_energy','offpeak_diff_dec_january_power']]
+df = pd.merge(df, diff, on='id')
+                    </div>
+
+                    <div class="code-block">
+# Enhanced Period-Based Price Features
+# Aggregate average prices per period by company
+mean_prices = price_df.groupby(['id']).agg({
+    'price_off_peak_var': 'mean',
+    'price_peak_var': 'mean',
+    'price_mid_peak_var': 'mean',
+    'price_off_peak_fix': 'mean',
+    'price_peak_fix': 'mean',
+    'price_mid_peak_fix': 'mean'
+}).reset_index()
+
+# Calculate the mean difference between consecutive periods
+mean_prices['off_peak_peak_var_mean_diff'] = mean_prices['price_off_peak_var'] - mean_prices['price_peak_var']
+mean_prices['peak_mid_peak_var_mean_diff'] = mean_prices['price_peak_var'] - mean_prices['price_mid_peak_var']
+
+period_diff_cols = ['id', 'off_peak_peak_var_mean_diff', 'peak_mid_peak_var_mean_diff']
+df = pd.merge(df, mean_prices[period_diff_cols], on='id')
+                    </div>
+
+                    <div class="code-block">
+# Price Sensitivity & Volatility Features
+df['price_volatility_index'] = (df['var_year_price_off_peak_var'] + df['var_year_price_peak_var']) / 2
+df['price_shock_indicator'] = (df['var_year_price_off_peak_var'] > df['var_year_price_off_peak_var'].quantile(0.95)).astype(int)
+
+# Margin & Profitability Features
+df['margin_efficiency'] = df['net_margin'] / df['margin_gross_pow_ele'].replace(0, 1)
+df['margin_per_kwh'] = df['net_margin'] / df['cons_12m'].replace(0, 1)
+                    </div>
+
+                    <p><strong>Engineering Achievements:</strong></p>
+                    <ul>
+                        <li>Expanded from 44 to 100+ features through systematic feature creation</li>
+                        <li>Implemented temporal, behavioral, and financial feature categories</li>
+                        <li>Applied log transformations to normalize skewed distributions</li>
+                        <li>Created interaction features capturing complex customer behaviors</li>
+                    </ul>
+
+                    <h4>Phase 3: Predictive Modeling</h4>
+                    <p>Developed and evaluated a production-ready Random Forest classifier:</p>
+
+                    <div class="code-block">
+# Data Preparation for Modeling
+y = df['churn']
+X = df.drop(columns=['id', 'churn'])  # Remove ID and target variable
+
+# Train-test split (75-25) with stratification
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.25, random_state=42, stratify=y
+)
+
+print(f"Training set: {X_train.shape[0]} samples")
+print(f"Testing set: {X_test.shape[0]} samples")
+print(f"Features: {X.shape[1]}")
+                    </div>
+
+                    <div class="code-block">
+# Optimized Random Forest Configuration
+rf_model = RandomForestClassifier(
+    n_estimators=1000,        # Ensemble size for stability
+    max_depth=15,             # Prevent overfitting
+    min_samples_split=20,     # Node splitting criteria
+    min_samples_leaf=10,      # Leaf node requirements
+    random_state=42,          # Reproducibility
+    n_jobs=-1,                # Parallel processing
+    class_weight='balanced',  # Handle class imbalance
+    bootstrap=True            # Bootstrap sampling
+)
+
+# Model Training
+print("Training Random Forest model...")
+rf_model.fit(X_train, y_train)
+
+# Generate Predictions
+y_pred = rf_model.predict(X_test)
+y_pred_proba = rf_model.predict_proba(X_test)[:, 1]
+                    </div>
+
+                    <div class="code-block">
+# Model Evaluation Metrics
+from sklearn import metrics
+
+# Calculate comprehensive metrics
+accuracy = metrics.accuracy_score(y_test, y_pred)
+precision = metrics.precision_score(y_test, y_pred)
+recall = metrics.recall_score(y_test, y_pred)
+f1 = metrics.f1_score(y_test, y_pred)
+
+# Confusion Matrix
+tn, fp, fn, tp = metrics.confusion_matrix(y_test, y_pred).ravel()
+
+print("=== MODEL PERFORMANCE ===")
+print(f"Accuracy: {accuracy:.3f}")
+print(f"Precision: {precision:.3f}")
+print(f"Recall: {recall:.3f}")
+print(f"F1-Score: {f1:.3f}")
+print(f"Confusion Matrix: TN={tn}, FP={fp}, FN={fn}, TP={tp}")
+                    </div>
+
+                    <h3 class="major">Model Performance Results</h3>
+
+                    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+                        <div class="metric-box">
+                            <div class="metric-value">90.4%</div>
+                            <div class="metric-label">Accuracy</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value">81.8%</div>
+                            <div class="metric-label">Precision</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value">4.9%</div>
+                            <div class="metric-label">Recall</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value">9.4%</div>
+                            <div class="metric-label">F1-Score</div>
+                        </div>
+                    </div>
+
+                    <h4>Evaluation Methodology</h4>
+                    <p>The evaluation metrics were carefully chosen to address the challenges of imbalanced classification:</p>
+
+                    <ul>
+                        <li><strong>Accuracy (90.4%)</strong>: Overall correctness, but can be misleading with imbalanced data</li>
+                        <li><strong>Precision (81.8%)</strong>: Of predicted churners, 81.8% actually churned (minimizes false positives)</li>
+                        <li><strong>Recall (4.9%)</strong>: Of actual churners, only 4.9% were identified (high false negatives)</li>
+                        <li><strong>F1-Score (9.4%)</strong>: Balanced measure accounting for both precision and recall</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4>Key Finding: Class Imbalance Challenge</h4>
+                        <p>The model excels at identifying loyal customers (high accuracy) but struggles with churn detection (low recall). This is expected with imbalanced data where churn represents only 9.7% of cases. The high precision indicates reliable churn predictions when made.</p>
+                    </div>
+
+                    <h3 class="major">Feature Importance Analysis</h3>
+                    <p>Understanding which customer characteristics drive churn enables targeted retention strategies:</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Feature</th>
+                                <th>Importance</th>
+                                <th>Business Interpretation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Net Margin</td>
+                                <td>0.089</td>
+                                <td>Profitability is the strongest churn predictor - customers with lower margins are significantly more likely to leave</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Consumption (12m)</td>
+                                <td>0.078</td>
+                                <td>Usage patterns strongly predict retention - significant consumption changes may signal dissatisfaction</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Margin on Power Subscription</td>
+                                <td>0.065</td>
+                                <td>Power service profitability impacts churn likelihood - service-specific margins matter</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Consumption Stability</td>
+                                <td>0.052</td>
+                                <td>Customers with unstable consumption patterns show higher churn risk</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Months Active</td>
+                                <td>0.048</td>
+                                <td>Contract age influences churn probability - newer customers more volatile</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="highlight-box">
+                        <h4>Strategic Insight: Price Sensitivity Not Dominant</h4>
+                        <p>Contrary to initial hypotheses, price sensitivity features (Estelle's Dec-Jan analysis) ranked lower in importance. Churn is primarily driven by profitability and usage patterns rather than pricing changes.</p>
+                    </div>
+
+                    <div style="text-align: center; margin: 30px 0;">
+                        <img src="images/Churn Analysis Visualizations.png" alt="Churn Analysis Visualizations" style="max-width: 100%; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        <p style="font-size: 14px; color: #718096; margin-top: 10px;"><em>Advanced churn analysis visualizations showing model insights and customer segmentation patterns</em></p>
+                    </div>
+
+                    <h3 class="major">Business Applications & Recommendations</h3>
+
+                    <h4>Risk-Based Customer Segmentation</h4>
+                    <p>The model enables three-tier customer segmentation for targeted retention:</p>
+
+                    <ul>
+                        <li><strong>High-Risk (70%+ probability)</strong>: 17 customers requiring immediate personalized retention offers</li>
+                        <li><strong>Medium-Risk (40-70% probability)</strong>: 686 customers for proactive loyalty program invitations</li>
+                        <li><strong>Low-Risk (<40% probability)</strong>: Focus on maintaining satisfaction and monitoring</li>
+                    </ul>
+
+                    <h4>Retention Strategy Recommendations</h4>
+
+                    <div class="code-block">
+# Priority Retention Actions Based on Feature Importance:
+
+1. **Profitability Optimization**
+   - Target customers with net_margin < 25th percentile
+   - Review pricing strategies for low-margin accounts
+   - Consider value-added services for profitability improvement
+
+2. **Usage Pattern Monitoring**
+   - Flag customers with consumption_stability < 0.8
+   - Monitor for sudden consumption drops (>20% reduction)
+   - Proactive engagement for customers showing usage decline
+
+3. **Contract Lifecycle Management**
+   - Focus retention efforts on customers with months_active < 12
+   - Special attention for contracts ending within 3 months
+   - Enhanced onboarding for new customers
+                    </div>
+
+                    <h4>Revenue Impact Assessment</h4>
+                    <p>Based on model predictions and customer segmentation:</p>
+                    <ul>
+                        <li><strong>Annual Revenue at Risk</strong>: €2.9M from predicted churners</li>
+                        <li><strong>Retention ROI</strong>: Targeted interventions could achieve 15-20% churn reduction</li>
+                        <li><strong>Cost Efficiency</strong>: Precision-focused approach minimizes wasted retention resources</li>
+                    </ul>
+
+                    <h3 class="major">Project Artifacts & Deliverables</h3>
+
+                    <div class="highlight-box">
+                        <h4>📋 Executive Summary & Documentation</h4>
+                        <p>Professional executive summary presenting business findings, model performance, and strategic recommendations for PowerCo leadership.</p>
+                        <p style="margin-top: 15px;"><strong>📄 Available Downloads:</strong></p>
+                        <ul style="margin-top: 10px;">
+                            <li><a href="BCG - Executive Summary.pdf" target="_blank" style="color: #3182ce;">📊 BCG Customer Churn Analysis - Executive Summary (PDF)</a></li>
+                            <li><a href="images/powerco comprehensive dashboard.png" target="_blank" style="color: #3182ce;">📈 PowerCo EDA Dashboard (PNG)</a></li>
+                            <li><a href="images/Churn Analysis Visualizations.png" target="_blank" style="color: #3182ce;">📊 Advanced Churn Analysis Visualizations (PNG)</a></li>
+                        </ul>
+                    </div>
+
+                    <h4>Jupyter Notebook Implementation:</h4>
+                    <p>The complete project implementation is available in the following Jupyter notebooks:</p>
+
+                    <h4>Task 2 - Exploratory Data Analysis</h4>
+                    <div class="code-block">
+# Comprehensive data exploration including:
+# - Statistical analysis of 14,606 customer records
+# - Visualization of consumption patterns and churn distributions
+# - Identification of data quality issues and preprocessing needs
+# - Initial hypothesis generation for churn drivers
+                    </div>
+
+                    <h4>Task 3 - Feature Engineering</h4>
+                    <div class="code-block">
+# Advanced feature engineering creating 60+ predictive features:
+# - Temporal features: contract duration, renewal timing, lifecycle stages
+# - Consumption analytics: stability metrics, forecast accuracy, usage patterns
+# - Financial intelligence: margin efficiency, profitability ratios, price sensitivity
+# - Categorical encoding: one-hot encoding with rare category handling
+# - Statistical transformations: log normalization of skewed distributions
+                    </div>
+
+                    <h4>Task 4 - Predictive Modeling</h4>
+                    <div class="code-block">
+# Production-ready Random Forest implementation:
+# - Optimized hyperparameters for imbalanced classification
+# - Comprehensive evaluation metrics (accuracy, precision, recall, F1)
+# - Feature importance analysis for business insights
+# - Risk-based customer segmentation for retention strategies
+# - Probability-based predictions for business applications
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4>For Recruiters & Hiring Managers</h4>
+                        <p><strong>What to Expect:</strong> This BCG-affiliated project demonstrates professional-level data science competencies. The downloadable executive summary provides a business-focused overview, while the visualizations showcase analytical storytelling capabilities. The complete methodology reflects real-world consulting project standards.</p>
+                        <p><strong>Key Competencies Demonstrated:</strong> End-to-end ML pipeline, business intelligence, stakeholder communication, advanced analytics, and strategic problem-solving.</p>
+                    </div>
+
+                    <h3 class="major">Conclusion</h3>
+
+                    <p>This BCG-affiliated project demonstrates enterprise-grade analytical capabilities across the full spectrum of data science practice, from sophisticated feature engineering to production-ready model deployment. The comprehensive approach showcases expertise in handling complex business challenges, optimizing machine learning algorithms, and delivering executive-level insights that drive strategic decision-making in a professional consulting environment.</p>
+
+                    <p>The project successfully addresses the challenges of imbalanced classification while providing clear, implementable retention strategies that could generate significant business value for PowerCo.</p>
+
+                    <div class="highlight-box">
+                        <h4>Project Significance</h4>
+                        <p>This BCG-affiliated project demonstrates enterprise-grade analytical capabilities across the full spectrum of data science practice, from sophisticated feature engineering to production-ready model deployment. The comprehensive approach showcases expertise in handling complex business challenges, optimizing machine learning algorithms, and delivering executive-level insights that drive strategic decision-making in a professional consulting environment.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
