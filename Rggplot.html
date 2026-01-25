@@ -1,159 +1,610 @@
 <!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-91KT4R27P2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-91KT4R27P2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-91KT4R27P2');
+    </script>
+    <title>Statistical Visualization Framework: Advanced R Analytics</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 24px;
+            background-color: #3182ce;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #2c5aa0;
+        }
+        .highlight-box {
+            background-color: #2d3748;
+            border-left: 4px solid #3182ce;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            color: #ffffff;
+        }
+        .highlight-box * {
+            color: #ffffff;
+        }
+        .highlight-box p {
+            color: #e2e8f0 !important;
+        }
+        .highlight-box h4, .highlight-box h5 {
+            color: #ffffff !important;
+        }
+        .highlight-box ul li {
+            color: #e2e8f0 !important;
+        }
+        .visualization-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .visualization-container img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .viz-caption {
+            font-size: 14px;
+            color: #718096;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .section-number {
+            color: #3182ce;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="is-preload">
 
-  gtag('config', 'G-91KT4R27P2');
-</script>
-		<title>Statistical Visualization Framework: Advanced R Analytics</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="index.html">Statistical Visualization Framework: Advanced R Analytics</a></h1>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">Statistical Visualization Framework: Advanced R Analytics</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+        <!-- Menu -->
+        <nav id="menu">
+            <div class="inner">
+                <h2>Menu</h2>
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="BCG.html">BCG Customer Churn Analysis</a></li>
+                    <li><a href="SATPerformance.html">SAT Performance Analysis</a></li>
+                    <li><a href="Netflix.html">Netflix Movie Duration Analysis</a></li>
+                    <li><a href="Rggplot.html">R and ggplot Data Visualization</a></li>
+                    <li><a href="CovidClean.html">COVID-19 Data Cleaning</a></li>
+                    <li><a href="CovidTableau.html">COVID-19 Data Visualization</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+                <a href="#" class="close">Close</a>
+            </div>
+        </nav>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="CovidClean.html">COVID-19 Data Cleaning</a></li>
-								<li><a href="CovidTableau.html">COVID-19 Data Visualization</a></li>
-								<li><a href="Rggplot.html">R and ggplot: A Guide to Data Visualization</a></li>
-								<li><a href="#Get-In-Touch">Contact</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+        <!-- Wrapper -->
+        <section id="wrapper">
+            <header>
+                <div class="inner">
+                    <a href="index.html" class="back-button">← Back to Portfolio</a>
+                    <h2>Data Visualization with R and ggplot2: A Comprehensive Study</h2>
+                    <p>This comprehensive analytical framework demonstrates advanced R programming techniques for statistical computing and data visualization. Leveraging ggplot2 and tidyverse methodologies, the project implements publication-quality statistical graphics and exploratory data analysis workflows that transform complex datasets into actionable insights.</p>
+                </div>
+            </header>
 
-				<!-- Wrapper -->
-					<section id="wrapper">
-						<header>
-							<div class="inner">
-								<h2>Statistical Visualization Framework: R Data Analytics Platform</h2>
-								<p>This comprehensive analytical framework demonstrates advanced R programming techniques for statistical computing and data visualization. Leveraging ggplot2 and tidyverse methodologies, the project implements publication-quality statistical graphics and exploratory data analysis workflows that transform complex datasets into actionable business intelligence.</p>
-							</div>
-						</header>
+            <!-- Content -->
+            <div class="wrapper">
+                <div class="inner">
 
-						<!-- Content -->
-							<div class="wrapper">
-								<div class="inner">
+                    <h3 class="major">Project Overview</h3>
 
-									<h3 class="major">Advanced Statistical Computing: R Visualization Framework</h3>
+                    <h4>Problem/Goal:</h4>
+                    <p>To showcase the capabilities of ggplot2, a popular data visualization library in R, by using the penguins and diamonds datasets to create a variety of plots that demonstrate the different functions available in the library.</p>
 
-                                    <h4>Problem/Goal:</h4>
-                                    To develop comprehensive statistical visualization capabilities using R and ggplot2, implementing advanced data exploration techniques across diverse datasets to demonstrate data science workflows for analytical insight generation and stakeholder communication.
-<br> <br> 
-                                    <h4>Data Sources:</h4>
-                                    Utilizing palmerpenguins and ggplot2::diamonds datasets for comprehensive statistical analysis and visualization. The penguin dataset enables ecological pattern analysis, while the diamonds dataset supports economic trend modeling, demonstrating versatile applications of statistical computing across diverse domains.
-<br> <br>                                   
-                                    <h4>Conclusion:</h4>
-                                    This analytical framework establishes R and ggplot2 as essential tools for statistical computing and data visualization in data science workflows. By demonstrating advanced plotting techniques across ecological and economic datasets, the project showcases the power of reproducible statistical analysis for generating insights that drive evidence-based decision-making and stakeholder communication.
- <br> <br>                                
-                                    <!-- ICONS -->
-                                                            <h4>Project Link</h4>
-                                                            <ul class="icons">
-                                                                <a href="Visualizing-Data-using-ggplot 6.html" class="fa fa-link"></a>
-                                                                
-                                                
-                        
-                        <br><br>
-									<h3 class="major">Data Science Portfolio</h3>
-									<p>Explore my comprehensive portfolio of data science projects demonstrating end-to-end analytical workflows, from data acquisition and processing to advanced modeling and business intelligence solutions that deliver actionable insights and drive strategic decision-making.</p>
-									<section class="features">
-										<article>
-											<a href="https://github.com/IbrahimsDataVault/ProjectsShowcase/blob/main/COVID%20Portfolio%20Project%20-%20Data%20Exploration" class="image"><img src="images/COVIDimg.jpg" alt="" /></a>
-											<h3 class="major">Healthcare Data Engineering: COVID-19 Analytics Pipeline</h3>
-											<p>Built SQL-based analytical framework for COVID-19 data analysis using Google BigQuery, developing complex queries to create summary tables and derive key health metrics including infection rates, mortality percentages, and geographic comparisons.</p>
-											<a href="CovidClean.html" class="special">View Project</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/Tableauimg 3.jpg" alt="" /></a>
-											<h3 class="major">Public Health Dashboard: COVID-19 Data Visualization</h3>
-											<p>Interactive business intelligence platform built with Tableau for pandemic monitoring, enabling stakeholders to explore epidemiological patterns and make data-driven public health decisions during global health crisis.</p>
-											<a href="CovidTableau.html" class="special">View Project</a>
-										</article>
-									</section>
+                    <h4>Data Sources:</h4>
+                    <p>The penguins dataset contains information on the size and species of penguins, while the diamonds dataset contains information on the price, carat weight, and other features of diamonds. Both datasets will be used to demonstrate the different plotting functions available in ggplot2.</p>
 
-								</div>
-							</div>
+                    <h4>Conclusion:</h4>
+                    <p>The project demonstrates the flexibility and power of ggplot2 as a data visualization tool in R. The use of both the penguins and diamonds datasets allowed for the creation of a variety of plots that showcased the different functions available in the library, such as histograms, bar plots, scatter plots, and smooth line plots. Overall, ggplot2 is an essential tool for data scientists and analysts looking to create high-quality data visualizations in R.</p>
 
-					</section>
+                    <div class="highlight-box">
+                        <h4>Key Technologies & Skills</h4>
+                        <ul>
+                            <li><strong>R Programming Language</strong> - Statistical computing and data analysis</li>
+                            <li><strong>ggplot2</strong> - Grammar of Graphics visualization framework</li>
+                            <li><strong>palmerpenguins</strong> - Ecological dataset for statistical analysis</li>
+                            <li><strong>Data Wrangling</strong> - Data manipulation and transformation</li>
+                            <li><strong>Statistical Visualization</strong> - Publication-quality graphics</li>
+                        </ul>
+                    </div>
 
-				<!-- Footer -->
-                <section id="footer">
-                    <div class="inner">
-                        <h2 class="major">Let's Connect</h2>
-                        <p>I'm passionate about applying data science to solve complex business challenges and drive innovation. Whether you're looking to discuss machine learning implementations, predictive modeling opportunities, or data strategy initiatives, I'd welcome the opportunity to collaborate on transformative data projects.</p>
-                        <form method="post" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScF2Wgr1EKn7NVFL51BMSaGjfR3KDLaG9L_kx_Kic0XU6OLTQ/formResponse">
-                            <div class="fields">
-                                <div class="field">
-                                    <label for="name">Name</label>
-                                    <input type="text" name="entry.1891781582" id="name" />
-                                </div>
-                                <div class="field">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="entry.615352512" id="email" />
-                                </div>
-                                <div class="field">
-                                    <label for="message">Message</label>
-                                    <textarea name="entry.1960583409" id="message" rows="4"></textarea>
-                                </div>
-                            </div>
-                            <ul class="actions">
-                                <li><input type="submit" value="Send Message" /></li>
-                                <li><a href="Ibrahim Resume.pdf" class="button primary">My Resume</a></li>
-                            </ul>
-            
-        </form>
-        <ul class="contact">
-            <li class="icon solid fa-home">
-                Anywhere, Anytime:<br />
-                Available to work remotely from any location<br />
-            </li>
-            <li class="icon solid fa-phone">(214) 235-1048</li>
-            <li class="icon solid fa-envelope"><a href="mailto:iaibrahim.ibrahim@gmail.com">iaibrahim.ibrahim@gmail.com</a></li>
-            <li href="https://www.linkedin.com/in/ibrahimai/" class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/ibrahimai/">https://www.linkedin.com/in/ibrahimai/</a></li>
-            <li href="#" class="icon brands fa-github"><a href="https://github.com/IbrahimsDataVault">https://github.com/IbrahimsDataVault</a></li>
-        </ul>
-        <ul class="copyright">
-            <li>&copy; 2022 Ibrahim's Data Vault - All rights reserved.</li>
-        </ul>
+                    <h3 class="major">Comprehensive R and ggplot2 Tutorial</h3>
+
+                    <!-- Section 1: Setup -->
+                    <h4><span class="section-number">1.</span> Install & Load the ggplot2 Package with Penguins Dataset</h4>
+                    <p>First, we load the necessary libraries for data visualization and access to the penguins dataset.</p>
+                    
+                    <pre><code>
+library("ggplot2")
+library("palmerpenguins")
+                    </code></pre>
+
+                    <!-- Section 2: View Dataset -->
+                    <h4><span class="section-number">2.</span> View the Penguins Dataset</h4>
+                    <p>Load and examine the structure of the penguins dataset to understand the available variables.</p>
+                    
+                    <pre><code>
+data("penguins")
+View(penguins)
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_2.png" alt="Example ggplot2 visualization">
+                        <p class="viz-caption">Example of an advanced ggplot2 visualization showcasing the library's capabilities</p>
+                    </div>
+
+                    <!-- Section 3: Basic Scatter Plot -->
+                    <h4><span class="section-number">3.</span> Creating a Scatter Plot with the Penguins Dataset</h4>
+                    <p>Create a basic scatter plot examining the relationship between flipper length and body mass.</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g))
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_3.png" alt="Basic scatter plot">
+                        <p class="viz-caption">Basic scatter plot: Flipper length vs. Body mass</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h5>Alternative Syntax</h5>
+                        <p>The same plot can be created with alternative syntax by placing the mapping in the ggplot() function:</p>
+                        <pre><code>
+ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point()
+                        </code></pre>
+                    </div>
+
+                    <!-- Section 4: Aesthetics -->
+                    <h4><span class="section-number">4.</span> Coding Different Aesthetics for the Penguins Plot</h4>
+                    
+                    <h5>4a. Aesthetic: Categorizing Species by Shape</h5>
+                    <p>Differentiate penguin species using different point shapes.</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, shape = species))
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_4.png" alt="Scatter plot with shapes">
+                        <p class="viz-caption">Species differentiated by point shape</p>
+                    </div>
+
+                    <h5>4b. Aesthetic: Categorizing Species by Shape & Color</h5>
+                    <p>Enhance the visualization by adding both shape and color to distinguish species.</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, shape = species, color = species))
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_5.png" alt="Scatter plot with shapes and colors">
+                        <p class="viz-caption">Species differentiated by both shape and color for improved clarity</p>
+                    </div>
+
+                    <h5>4c. Aesthetic: Categorizing Species by Shape, Color, and Size</h5>
+                    <p>Add size as an additional aesthetic dimension (note: this can make plots harder to read).</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, shape = species, color = species, size = species))
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_6.png" alt="Scatter plot with multiple aesthetics">
+                        <p class="viz-caption">Multi-dimensional aesthetic mapping (shape, color, and size)</p>
+                    </div>
+
+                    <h5>4d. Aesthetic: Categorizing Species by Opacity</h5>
+                    <p>Use alpha (transparency) to distinguish between species groups.</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, alpha = species))
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_7.png" alt="Scatter plot with opacity">
+                        <p class="viz-caption">Species differentiated by opacity (alpha transparency)</p>
+                    </div>
+
+                    <h5>4e. Aesthetic: Assigning a Color to All Points</h5>
+                    <p>Apply a uniform color to all data points (color specified outside the aes() function).</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g), color = "purple")
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_8.png" alt="Scatter plot with uniform color">
+                        <p class="viz-caption">All points colored uniformly in purple</p>
+                    </div>
+
+                    <!-- Section 5: Smooth Lines -->
+                    <h4><span class="section-number">5.</span> Creating a Smooth Line Plot with the Penguins Dataset</h4>
+                    <p>Use geom_smooth() to add a trend line to visualize the overall relationship.</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_smooth(mapping = aes(x = flipper_length_mm, y = body_mass_g))
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_9.png" alt="Smooth line plot">
+                        <p class="viz-caption">Smooth trend line showing the relationship between flipper length and body mass</p>
+                    </div>
+
+                    <h5>5a. Combining Scatter Plot & Smooth Line Plot</h5>
+                    <p>Layer both geom_point() and geom_smooth() to show both data points and the trend line.</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_smooth(mapping = aes(x = flipper_length_mm, y = body_mass_g))
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_10.png" alt="Combined scatter and smooth plot">
+                        <p class="viz-caption">Combined visualization: scatter plot with overlaid smooth trend line</p>
+                    </div>
+
+                    <h5>5b. Aesthetic: Categorizing Species in the Smooth Line Plot by Line Type</h5>
+                    <p>Create separate trend lines for each species using different line types.</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_smooth(mapping = aes(x = flipper_length_mm, y = body_mass_g, linetype = species))
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_11.png" alt="Smooth lines by species">
+                        <p class="viz-caption">Species-specific trend lines differentiated by line type</p>
+                    </div>
+
+                    <!-- Section 6: Jitter -->
+                    <h4><span class="section-number">6.</span> Using geom_jitter() to Prevent Overplotting</h4>
+                    <p>Apply jittering to scatter plot points to prevent overlapping and reveal data density.</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_jitter(mapping = aes(x = flipper_length_mm, y = body_mass_g))
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_12.png" alt="Jittered scatter plot">
+                        <p class="viz-caption">Jittered scatter plot to reduce overplotting and show data density</p>
+                    </div>
+
+                    <!-- Section 7: Faceting -->
+                    <h4><span class="section-number">7.</span> Using facet_grid() to Create Multiple Plots</h4>
+                    <p>Split the data into subsets based on sex and species using a grid layout.</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  facet_grid(sex ~ species)
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_13.png" alt="Facet grid plot">
+                        <p class="viz-caption">Faceted visualization: separate plots for each sex and species combination</p>
+                    </div>
+
+                    <h4><span class="section-number">8.</span> Using facet_wrap() to Categorize by Species</h4>
+                    <p>Create separate plots for each species using a wrapped layout for better space utilization.</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  facet_wrap(~species)
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_14.png" alt="Facet wrap plot">
+                        <p class="viz-caption">Facet wrap visualization: species-specific plots in a flexible layout</p>
+                    </div>
+
+                    <!-- Diamonds Dataset Section -->
+                    <h3 class="major">Working with the Diamonds Dataset</h3>
+
+                    <h4><span class="section-number">9.</span> Loading & Viewing the Diamonds Dataset</h4>
+                    <p>The diamonds dataset is included with ggplot2 and contains information on diamond characteristics.</p>
+                    
+                    <pre><code>
+data("diamonds")
+View(diamonds)
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_15.png" alt="Diamonds dataset view">
+                        <p class="viz-caption">Diamonds dataset structure and preview</p>
+                    </div>
+
+                    <h4><span class="section-number">10.</span> Creating Bar Graphs with the Diamonds Dataset</h4>
+                    <p>Visualize the distribution of diamond cuts using a bar graph.</p>
+                    
+                    <pre><code>
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x = cut))
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_16.png" alt="Basic bar graph">
+                        <p class="viz-caption">Bar graph showing the count of diamonds by cut quality</p>
+                    </div>
+
+                    <h5>10a. Aesthetic: Classifying Cut Types by Border Color</h5>
+                    <p>Use different colors for bar borders based on cut quality.</p>
+                    
+                    <pre><code>
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x = cut, color = cut))
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_17.png" alt="Bar graph with colored borders">
+                        <p class="viz-caption">Bar graph with cut quality differentiated by border color</p>
+                    </div>
+
+                    <h5>10b. Aesthetic: Classifying Cut Types by Fill Color</h5>
+                    <p>Apply different fill colors to bars based on cut quality for better visual distinction.</p>
+                    
+                    <pre><code>
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x = cut, fill = cut))
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_18.png" alt="Bar graph with fill colors">
+                        <p class="viz-caption">Bar graph with cut quality differentiated by fill color</p>
+                    </div>
+
+                    <h5>10c. Aesthetic: Classifying Clarity within Cut Types</h5>
+                    <p>Show the distribution of clarity grades within each cut type using stacked bars.</p>
+                    
+                    <pre><code>
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x = cut, fill = clarity))
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_19.png" alt="Stacked bar graph">
+                        <p class="viz-caption">Stacked bar graph showing clarity distribution within each cut type</p>
+                    </div>
+
+                    <h5>10d. Using facet_wrap() for Cut Categories</h5>
+                    <p>Create separate bar graphs for each cut type to better compare clarity distributions.</p>
+                    
+                    <pre><code>
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x = cut, fill = clarity)) +
+  facet_wrap(~cut)
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_20.png" alt="Faceted bar graphs">
+                        <p class="viz-caption">Faceted bar graphs: individual plots for each cut quality</p>
+                    </div>
+
+                    <!-- Labels and Annotations Section -->
+                    <h3 class="major">Adding Labels and Annotations</h3>
+
+                    <h4><span class="section-number">11.</span> Enhancing Plots with Titles and Annotations</h4>
+                    
+                    <h5>11a. Adding a Title</h5>
+                    <p>Add a descriptive title to your visualization using labs().</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  labs(title = "Palmer Penguins: Body Mass vs. Flipper Length")
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_21.png" alt="Plot with title">
+                        <p class="viz-caption">Scatter plot enhanced with a descriptive title</p>
+                    </div>
+
+                    <h5>11b. Adding Title & Subtitle</h5>
+                    <p>Include both a title and subtitle for additional context.</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  labs(title = "Palmer Penguins: Body Mass vs. Flipper Length",
+       subtitle = "Sample of Three Penguin Species")
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_22.png" alt="Plot with title and subtitle">
+                        <p class="viz-caption">Visualization with title and subtitle for enhanced context</p>
+                    </div>
+
+                    <h5>11c. Adding Title, Subtitle, and Caption</h5>
+                    <p>Include a caption to cite data sources or provide additional information.</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  labs(title = "Palmer Penguins: Body Mass vs. Flipper Length",
+       subtitle = "Sample of Three Penguin Species",
+       caption = "Data collected from 2007-2009")
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_23.png" alt="Plot with full labels">
+                        <p class="viz-caption">Complete visualization with title, subtitle, and data source citation</p>
+                    </div>
+
+                    <h5>11d. Adding Custom Annotations</h5>
+                    <p>Place custom text annotations directly on the plot using annotate().</p>
+                    
+                    <pre><code>
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  labs(title = "Palmer Penguins: Body Mass vs. Flipper Length",
+       subtitle = "Sample of Three Penguin Species",
+       caption = "Data collected from 2007-2009") +
+  annotate("text", x = 220, y = 3500, label = "Gentoo penguins are larger", 
+           color = "purple", fontface = "bold", angle = 25)
+                    </code></pre>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_24.png" alt="Plot with annotation">
+                        <p class="viz-caption">Publication-quality visualization with custom annotations highlighting key insights</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h5>Pro Tip: Saving Plot Objects</h5>
+                        <p>Save your base plot as a variable to easily add different annotations or modifications without rewriting the entire code:</p>
+                        <pre><code>
+p <- ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  labs(title = "Palmer Penguins: Body Mass vs. Flipper Length",
+       subtitle = "Sample of Three Penguin Species",
+       caption = "Data collected from 2007-2009")
+
+# Then add annotations
+p + annotate("text", x = 220, y = 3500, 
+             label = "Gentoo penguins are larger", 
+             color = "purple", fontface = "bold", angle = 25)
+                        </code></pre>
+                    </div>
+
+                    <div class="visualization-container">
+                        <img src="images/ggplot_visualizations/ggplot_viz_25.png" alt="Final visualization">
+                        <p class="viz-caption">Final polished visualization demonstrating professional R visualization techniques</p>
+                    </div>
+
+                    <h3 class="major">Key Takeaways</h3>
+                    
+                    <div class="highlight-box">
+                        <h4>ggplot2 Best Practices Demonstrated</h4>
+                        <ul>
+                            <li><strong>Layered Grammar of Graphics:</strong> Building complex visualizations by layering geometric objects</li>
+                            <li><strong>Aesthetic Mapping:</strong> Using color, shape, size, and transparency to encode data dimensions</li>
+                            <li><strong>Faceting:</strong> Creating small multiples to compare across categories</li>
+                            <li><strong>Statistical Transformations:</strong> Adding smooth lines and statistical summaries</li>
+                            <li><strong>Professional Annotations:</strong> Enhancing plots with titles, labels, and custom text</li>
+                            <li><strong>Code Reusability:</strong> Saving plot objects for efficient iteration and refinement</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="major">Conclusion</h3>
+                    <p>This comprehensive project demonstrates the flexibility and power of ggplot2 as a data visualization tool in R. Through systematic exploration of both the penguins and diamonds datasets, we've showcased the library's capabilities in creating publication-quality statistical graphics.</p>
+                    
+                    <p>The techniques demonstrated, from basic scatter plots to complex faceted visualizations with custom annotations, represent essential skills for data scientists and analysts. ggplot2's grammar of graphics approach enables reproducible, elegant visualizations that effectively communicate insights from complex datasets.</p>
+
+                    <p>These visualization techniques are fundamental to exploratory data analysis, statistical communication, and data-driven storytelling across diverse analytical domains including ecology, economics, and business intelligence.</p>
+
+                    <br><br>
+                    <h3 class="major">Related Projects</h3>
+                    <p>Explore more data science projects demonstrating end-to-end analytical workflows and advanced visualization techniques.</p>
+                    
+                    <section class="features">
+                        <article>
+                            <a href="BCG.html" class="image"><img src="images/bcg.webp" alt="BCG Logo" /></a>
+                            <h3 class="major">BCG Customer Churn Analysis</h3>
+                            <p>Complete end-to-end data science project developing customer churn prediction models with advanced feature engineering and Random Forest optimization.</p>
+                            <a href="BCG.html" class="special">View Project</a>
+                        </article>
+                        <article>
+                            <a href="CovidTableau.html" class="image"><img src="images/Tableauimg 3.jpg" alt="" /></a>
+                            <h3 class="major">Public Health Dashboard: COVID-19 Data Visualization</h3>
+                            <p>Interactive business intelligence platform built with Tableau for pandemic monitoring and epidemiological pattern analysis.</p>
+                            <a href="CovidTableau.html" class="special">View Project</a>
+                        </article>
+                    </section>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <section id="footer">
+            <div class="inner">
+                <h2 class="major">Let's Connect</h2>
+                <p>I'm passionate about applying data science to solve complex business challenges and drive innovation. Whether you're looking to discuss machine learning implementations, predictive modeling opportunities, or data strategy initiatives, I'd welcome the opportunity to collaborate on transformative data projects.</p>
+                <form method="post" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScF2Wgr1EKn7NVFL51BMSaGjfR3KDLaG9L_kx_Kic0XU6OLTQ/formResponse">
+                    <div class="fields">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input type="text" name="entry.1891781582" id="name" />
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" name="entry.615352512" id="email" />
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea name="entry.1960583409" id="message" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Send Message" /></li>
+                        <li><a href="Ibrahim Resume.pdf" class="button primary">My Resume</a></li>
+                    </ul>
+                </form>
+                <ul class="contact">
+                    <li class="icon solid fa-home">
+                        Anywhere, Anytime:<br />
+                        Available to work remotely from any location<br />
+                    </li>
+                    <li class="icon solid fa-envelope"><a href="mailto:iaibrahim.ibrahim@gmail.com">iaibrahim.ibrahim@gmail.com</a></li>
+                    <li href="https://www.linkedin.com/in/ibrahimai/" class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/ibrahimai/">https://www.linkedin.com/in/ibrahimai/</a></li>
+                    <li href="#" class="icon brands fa-github"><a href="https://github.com/IbrahimsDataVault">https://github.com/IbrahimsDataVault</a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2022 Ibrahim's Data Vault - All rights reserved.</li>
+                </ul>
+            </div>
+        </section>
+
     </div>
-</section>
 
-</div>
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>

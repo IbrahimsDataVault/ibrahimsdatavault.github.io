@@ -17,6 +17,20 @@
     <!-- Include Plotly.js -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <style>
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 24px;
+            background-color: #3182ce;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #2c5aa0;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -62,11 +76,13 @@
                 <h2>Menu</h2>
                 <ul class="links">
                     <li><a href="index.html">Home</a></li>
-					<li><a href="Netflix.html">Netflix Movie Duration Analysis</a></li>
+                    <li><a href="BCG.html">BCG Customer Churn Analysis</a></li>
+                    <li><a href="SATPerformance.html">SAT Performance Analysis</a></li>
+                    <li><a href="Netflix.html">Netflix Movie Duration Analysis</a></li>
+                    <li><a href="Rggplot.html">R and ggplot Data Visualization</a></li>
                     <li><a href="CovidClean.html">COVID-19 Data Cleaning</a></li>
                     <li><a href="CovidTableau.html">COVID-19 Data Visualization</a></li>
-                    <li><a href="Rggplot.html">R and ggplot: A Guide to Data Visualization</a></li>
-                    <li><a href="#Get-In-Touch">Contact</a></li>
+                    <li><a href="#footer">Contact</a></li>
                 </ul>
                 <a href="#" class="close">Close</a>
             </div>
@@ -76,6 +92,7 @@
         <section id="wrapper">
             <header>
                 <div class="inner">
+                    <a href="index.html" class="back-button">← Back to Portfolio</a>
                     <h2>Educational Data Science: NYC School Performance Analysis</h2>
                     <p>This analytical framework applies data science methodologies to evaluate NYC public school SAT performance data, using Python-based analysis to identify excellence patterns and provide evidence-based insights for educational stakeholders and policy decision-making.</p>
                 </div>
@@ -324,7 +341,6 @@ print(largest_std_dev)
                         Anywhere, Anytime:<br />
                         Available to work remotely from any location<br />
                     </li>
-                    <li class="icon solid fa-phone">(214) 235-1048)</li>
                     <li class="icon solid fa-envelope"><a href="mailto:iaibrahim.ibrahim@gmail.com">iaibrahim.ibrahim@gmail.com</a></li>
                     <li href="https://www.linkedin.com/in/ibrahimai/" class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/ibrahimai/">https://www.linkedin.com/in/ibrahimai/</a></li>
                     <li href="#" class="icon brands fa-github"><a href="https://github.com/IbrahimsDataVault">https://github.com/IbrahimsDataVault</a></li>
@@ -334,6 +350,33 @@ print(largest_std_dev)
                 </ul>
             </div>
         </section>
+
+    </div>
+
+    <!-- Related Projects Section -->
+    <section id="wrapper">
+        <div class="wrapper">
+            <div class="inner">
+                <h3 class="major">Related Projects</h3>
+                <p>Explore more data science projects demonstrating end-to-end analytical workflows and advanced visualization techniques.</p>
+                
+                <section class="features">
+                    <article>
+                        <a href="BCG.html" class="image"><img src="images/bcg.webp" alt="BCG Logo" /></a>
+                        <h3 class="major">BCG Customer Churn Analysis</h3>
+                        <p>Complete end-to-end data science project developing customer churn prediction models with advanced feature engineering and Random Forest optimization.</p>
+                        <a href="BCG.html" class="special">View Project</a>
+                    </article>
+                    <article>
+                        <a href="CovidTableau.html" class="image"><img src="images/Tableauimg 3.jpg" alt="COVID-19 Dashboard" /></a>
+                        <h3 class="major">Public Health Dashboard: COVID-19 Data Visualization</h3>
+                        <p>Interactive business intelligence platform built with Tableau for pandemic monitoring and epidemiological pattern analysis.</p>
+                        <a href="CovidTableau.html" class="special">View Project</a>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </section>
 
     </div>
 

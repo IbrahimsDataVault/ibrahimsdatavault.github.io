@@ -39,6 +39,20 @@
         tbody tr:nth-child(odd) {
             background-color: #ffffff;
         }
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 24px;
+            background-color: #3182ce;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #2c5aa0;
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -60,11 +74,13 @@
                 <h2>Menu</h2>
                 <ul class="links">
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="BCG.html">BCG Customer Churn Analysis</a></li>
+                    <li><a href="SATPerformance.html">SAT Performance Analysis</a></li>
+                    <li><a href="Netflix.html">Netflix Movie Duration Analysis</a></li>
+                    <li><a href="Rggplot.html">R and ggplot Data Visualization</a></li>
                     <li><a href="CovidClean.html">COVID-19 Data Cleaning</a></li>
                     <li><a href="CovidTableau.html">COVID-19 Data Visualization</a></li>
-                    <li><a href="Rggplot.html">R and ggplot: A Guide to Data Visualization</a></li>
-                    <li><a href="SATPerformance.html">SAT Performance Analysis</a></li>
-                    <li><a href="#Get-In-Touch">Contact</a></li>
+                    <li><a href="#footer">Contact</a></li>
                 </ul>
                 <a href="#" class="close">Close</a>
             </div>
@@ -74,6 +90,7 @@
         <section id="wrapper">
             <header>
                 <div class="inner">
+                    <a href="index.html" class="back-button">← Back to Portfolio</a>
                     <h2>Content Analytics: Netflix Data Science Investigation</h2>
                     <p>This data science initiative applies analytical methodologies to investigate Netflix's content evolution, using statistical analysis and data visualization to understand temporal patterns and strategic shifts in the streaming entertainment industry.</p>
                 </div>
@@ -100,7 +117,7 @@
                     <p>This analytical framework demonstrates the application of data science methodologies to entertainment industry challenges, providing actionable insights for content strategy optimization and stakeholder decision-making in the streaming media landscape.</p>
 
                     <h4>The Dataset:</h4>
-                    <p><a href="netflix_data.csv">netflix_data</a></p>
+                    <p><a href="/Netflix_Project/netflix_data.csv">netflix_data</a></p>
                     <p>Below is a snapshot of the dataset used for this analysis:</p>
                     <table>
                         <thead>
@@ -523,10 +540,30 @@ plt.xlabel('Release year'); plt.ylabel('Duration (min)'); plt.title('Movie Durat
 plt.show()
                     </code></pre>
                     <h5>Output:</h5>
-                    <img src="movie_durations_by _year.png" alt="Movie Duration by Year of Release" style="width:700px; height:500px;">
+                    <img src="/Netflix_Project/movie_durations_by _year.png" alt="Movie Duration by Year of Release" style="width:700px; height:500px;">
 
                     <h5>6. Answer the question "Are we certain that movies are getting shorter?"</h5>
                     <p>Based on the scatter plot, it is not definitively clear that movies are consistently getting shorter over time. There are fluctuations in movie durations across different release years, suggesting that other factors, such as genre and production constraints, may play a significant role in determining movie lengths.</p>
+                    
+                    <br><br>
+                    <h3 class="major">Related Projects</h3>
+                    <p>Explore more data science projects demonstrating end-to-end analytical workflows and advanced visualization techniques.</p>
+                    
+                    <section class="features">
+                        <article>
+                            <a href="BCG.html" class="image"><img src="images/bcg.webp" alt="BCG Logo" /></a>
+                            <h3 class="major">BCG Customer Churn Analysis</h3>
+                            <p>Complete end-to-end data science project developing customer churn prediction models with advanced feature engineering and Random Forest optimization.</p>
+                            <a href="BCG.html" class="special">View Project</a>
+                        </article>
+                        <article>
+                            <a href="SATPerformance.html" class="image"><img src="images/schoolbus.jpg" alt="NYC Schools" /></a>
+                            <h3 class="major">NYC School Performance Analysis</h3>
+                            <p>Educational analytics using Python and Pandas to analyze SAT performance data and identify top-performing schools across NYC.</p>
+                            <a href="SATPerformance.html" class="special">View Project</a>
+                        </article>
+                    </section>
+
                 </div>
             </div>
         </section>
@@ -561,7 +598,6 @@ plt.show()
                         Anywhere, Anytime:<br />
                         Available to work remotely from any location<br />
                     </li>
-                    <li class="icon solid fa-phone">(214) 235-1048)</li>
                     <li class="icon solid fa-envelope"><a href="mailto:iaibrahim.ibrahim@gmail.com">iaibrahim.ibrahim@gmail.com</a></li>
                     <li href="https://www.linkedin.com/in/ibrahimai/" class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/ibrahimai/">https://www.linkedin.com/in/ibrahimai/</a></li>
                     <li href="#" class="icon brands fa-github"><a href="https://github.com/IbrahimsDataVault">https://github.com/IbrahimsDataVault</a></li>
